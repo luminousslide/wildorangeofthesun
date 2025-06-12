@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WILDORANGEOFTHESUN</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .centered {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: fadein 5s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    .illuminati-text {
+      color: red;
+      font-size: 8em; /* bigger text */
+      font-weight: bold;
+      letter-spacing: 0.2em; /* space between letters */
+      transform: scaleX(1.2); /* make it wider */
+      text-transform: uppercase;
+    }
+
+    @keyframes fadein {
+      to {
+        opacity: 1;
+      }
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1em;
+      background-color: red;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.2);
+      background-color: #ff4d4d;
+    }
+
+    video {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="centered" id="content">
+    <div class="illuminati-text">illuminati</div>
+    <button onclick="playVideo()">Trust Me</button>
+  </div>
+
+  <video id="fullscreenVideo" autoplay>
+    <source src="D:\A Clockwork Orange -illuminati Kubrick.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    function playVideo() {
+      document.getElementById('content').style.display = 'none';
+      const video = document.getElementById('fullscreenVideo');
+      video.style.display = 'block';
+      video.muted = false;
+      video.play();
+    }
+  </script>
+</body>
+</html>
